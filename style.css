@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');/*its use for font text */
+/* Root variables for color and layout */
+:root{
+    --pprimary-color:#8263a3;/* Primary color variable */
+    --text-dark:#232637;/* Dark text color */
+    --white:#ffffff;/* White color */
+    --max-width:1200px;/* Maximum width for the container */
+}
+/* Reset default margin, padding, and box-sizing */
+*{
+    padding:0;/* because the they touch the upper side*/
+    margin: 0;/* dont want gap to upper side and its look so easy and best  */
+    box-sizing: border-box;/* beause i need this shape */
+}
+/* Button styling */
+.btn{
+    position: absolute;
+    padding: 1rem 2rem;/* that gap is correct is 1rem and 2rem to perfect shape*/
+    outline:none;/*i dont wanna any out line so i make it none*/
+    border: none;/* i dont wanna any border to  */
+    font-weight: 600;/* its  pefect for words */
+    cursor:pointer;/*color chanage button mouse cursor on this   */
+}
+/* Link styling */
+a{
+    text-decoration: none;/* i dont wanna any under line or border to the text*/
+    transition: 0.3s;/*cursor animation time is this beacuse its smooth animation */
+}
+/* Body styling */
+body{
+    font-family: "Noto Sans", sans-serif;/*its text fon-ts i like it*/
+    background-color: #dbdce0;/* background color is silver*/
+}
+body::after{
+    position: fixed;
+    content: "";/* content fill none*/
+    height:100%;/*height minmum are 90 but i think 100 is full*/
+    width:0;
+    top:0;/*its perfect for top 0*/
+    right:0;/* its perfect for right 0*/
+    background-color: var(--text-dark);/*background color to text are dark*/
+    z-index: -1;/* because i use to z index axis is -1 they reduce background*/
+    animation: body-bg 1s ease-in-out forwards;/* for side flip animation*/
+}
+/* Keyframes for body background animation */
+@keyframes body-bg{
+   0%{
+    width:0vw;/* Starts with a width of 0 at the beginning of the animation */
+
+    }
+    100%{
+        width:50vw;/* Ends with a width of 50% of the viewport */
+    }
+
+}
+/* Styling for a pseudo-element before the body content */
+body::before{
+    position:fixed;/* Fixes the element's position relative to the viewport */
+    content:"0";/* Adds a large "0" character for visual effect */
+    top:0;/* Positions the element at the top of the viewport */
+    left:0;/* Positions the element at the left of the viewport */
+    transform: translate(-50%,-50%);/* Centers the element within the viewport */
+    font-size: 70rem;/* Sets a very large font size for emphasis */
+    font-weight: 200;/* Sets a thin font weight for the character */
+    color: var(--white); /* Sets the color of the character to white */
+    z-index:-1;/* Places the element behind other content */
+   opacity:0.5;/* Makes the element semi-transparent */
+}
+/* Container styling */
+.container{
+    position: relative;/* Positions the container relative to its normal position */
+    isolation:isolate;/* Ensures child elements don't blend with elements outside the container */
+    min-height:100vh;/* Sets the minimum height to fill the entire viewport */
+    max-width: var(--max-width);/* Limits the container width based on a CSS variable */
+    margin-inline:auto;/* Centers the container horizontally */
+    overflow: hidden;/* Hides any overflow content */
+
+}
+/* Navigation styling */
+nav{
+    padding: 2rem 0;/* Adds vertical padding around the nav */
+    padding-inline:1rem;/* Adds horizontal padding on the left and right */
+    display: flex;/* Arranges items in a row */
+    align-items: center;/* Vertically centers items within the nav */
+    justify-content: space-between;/* Distributes space between items */
+    gap:1rem;/* Adds spacing between each item */
+}
+/* Styles for the navigation links container */
+.nav__links{
+    list-style: none;/* Removes bullet points from list items */
+    display:flex;/* Aligns items in a horizontal row */
+    align-items: center;/* Vertically centers items within the container */
+    gap:2rem;/* Adds 2rem spacing between each item */
+}
+/* Styles for anchor tags inside the nav__links container */
+.nav__links a{
+    font-weight: 500;/* Sets the font weight to medium for all links */
+}
+/* Styles for the logo within the nav__links, giving it a larger font */
+.nav__links.logo{
+    font-size: 1.2rre;/* Increases font size for the logo */
+    font-weight: 800;/* Makes the font extra bold */
+}
+/* Styles for a left-aligned navigation item */
+.nav__lef{
+    color:var(--text-dark);/* Sets the text color to a dark theme color */
+}
+/* Styles for anchor tags in the right-aligned navigation */
+.nav__right a{
+    color:var(--white);/* Sets the link text color to white */
+}
+/* Hover effect for links in nav__links */
+.nav__links a:hover{
+    color:var(--pprimary-color)/* Changes link color on hover to the primary theme color */
+}
+/* Large letter "L" for decorative purposes */
+.letter-l{
+    position: absolute;/* Positions it absolutely within its container */
+    top:50%; /* Vertically centers the element */
+    left:50%;/* Horizontally centers the element */
+    transform: translate(-50%,-50%);/* Fine-tunes the centering */
+    font-size: 40rem;/* Sets a massive font size for impact */
+    line-height: 40rem;/* Matches line-height with font-size for alignment */
+    font-weight: 900;/* Makes the letter extremely bold */
+    color:var(--pprimary-color);/* Applies the primary theme color */
+}
+/* Styling for an image inside the container */
+.container img{
+    position:absolute;/* Positions image absolutely within the container */
+    width: 100%;/* Sets image width to fill container width */
+    max-width: 200px;/* Limits width to 200px */
+    top:50%;/* Vertically centers the image */
+    left:50%; /* Horizontally centers the image */
+    transform: translate(-50%,-50%);/* Further centers the image */
+    filter:drop-shadow(0 0 50 rgb(0,0,0,.8) );/* Adds a shadow with a dark, slightly transparent effect */
+}
+/* Styling for an h4 heading inside the container */
+.container h4{
+    position:absolute;/* Positions heading absolutely within the container */
+    top:50%;/* Centers vertically */
+    left:50%;/* Centers horizontally */
+    font-size: 5rem;/* Sets large font size */
+    color:var(--white);/* Sets the text color to white */
+    letter-spacing: 25px;/* Adds spacing between letters */
+}
+/* Adjusts text to the left with extra space */
+.text__left{
+    transform: translate(calc(-50% - 250px),-50%); /* Moves the element left from center by 250px */
+}
+/* Adjusts text to the right with extra space */
+.text__right{
+    transform: translate(calc(-50% + 250px),-50%);/* Moves the element right from center by 250px */
+}
+/* Styles for an "explore" button within the container */
+.container .explore{
+    top:50%;/* Vertically centers the button */
+    left:50%;/* Horizontally centers the button */
+    transform: translate(-50%,calc(-50% + 225px));/* Centers and pushes it down 225px */
+    color:var(--text-dark);/* Sets text color to a dark theme color */
+    background-color: var(--white);/* Sets the button background to white */
+    box-shadow: 0 0 50px rgb(0,0,0,0.4);/* Adds a subtle shadow effect */
+}
+/* Styles for a "calculate" button inside the container */
+.container .calculate{
+    top: 50%;/* Vertically centers the button */
+    right:0%;/* Positions the button to the far right */
+    transform:translate(0,-50%)rotate(90deg);/* Centers vertically and rotates button 90 degrees */
+    padding:calc(1rem- 4px) calc(2rem - 4px);/* Adds padding with specific adjustments */
+    color:var(--white);/* Sets button text color to white */
+    background-color: transparent;/* Makes button background transparent */
+    border: 1px solid var(--white);/* Adds a white border around the button */
+}
+/* Styles for a "print" button within the container */
+.container .print{
+    top: 50%; /* Vertically centers the button within the container */
+    right:0; /* Positions the button to the far right of the container */
+    transform:translate(0,-50%)rotate(90deg); /* Centers vertically and rotates the button 90 degrees */
+    padding:calc(1rem- 4px) calc(2rem - 4px); /* Adds padding with slight adjustments */
+    color:var(--white);/* Sets button text color to white */
+    background-color: transparent; /* Makes the button background transparent */
+    border: 1px solid var(--white);/* Adds a white border around the button */
+}
+/* Styles for a "catalog" button within the container */
+.container .catlog{
+    top: 25%;  /* Positions the button 25% from the top of the container */
+    left:0;   /* Positions the button to the far left of the container */
+    transform:translate(0,-50%)rotate(-90deg);  /* Centers vertically and rotates the button -90 degrees */
+    padding:calc(1rem- 4px) calc(2rem - 4px);   /* Adds padding with slight adjustments */
+    color:var(--white);  /* Sets button text color to white */
+    background-color: transparent;   /* Makes the button background transparent */
+    border: 1px solid var(--white);   /* Adds a white border around the button */
+}
