@@ -1,4 +1,4 @@
 # Landing-Page of Rolex watch 
-![Calculator Screenshot](images/calculator.png)
+![Landing Page](Capture004.PNG)
+![Landing Page](images/Capture004.PNG)
 
-![Uploading Capture004.PNG…]()
